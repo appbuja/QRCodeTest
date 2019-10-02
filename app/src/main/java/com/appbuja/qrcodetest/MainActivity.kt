@@ -20,7 +20,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button.setOnClickListener {
-            IntentIntegrator(this).initiateScan()
+            val integrator = IntentIntegrator(this)
+            integrator.setOrientationLocked(false)
+            integrator.initiateScan()
         }
     }
 
